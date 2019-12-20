@@ -8,25 +8,69 @@
     <title>Landing - Free Bulma template</title>
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <!-- Bulma Version 0.8.x-->
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <section class="hero is-danger">
+
+    <header class="hero is-danger">
         <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
-              Rock Paper Scissors
-            </h1>
-            <h2 class="subtitle">
-              Can you beat it!
-            </h2>
-          </div>
+            <div class="container">
+                <h1 class="title">
+                    Rock Paper Scissors
+                </h1>
+                <h2 class="subtitle">
+                    Can you beat it!
+                </h2>
+            </div>
         </div>
-      </section>
+    </header>
+
+    <section class="section">
+        <div class="container has-text-centered">
+
+            <h1 class="title">ScoreBoard</h1>
+            <div class="scoreboard columns is-centered">
+                <div class="user-card column box is-2">
+                    <h1 class="title has-background-danger" for="user">User</h1>
+                    <p class="user-score is-size-2">0</p>
+                </div>
+                <div class="column is-1">
+                    <p class="versus is-size-4">VS.</p>
+                </div>
+                <div class="computer-card column box is-2">
+                    <h1 class="title has-background-danger" for="computer">Computer</h1>
+                    <p class="computer-score is-size-2">0</p>
+                </div>
+            </div>
+
+            <div class="result">
+                <p>Paper Covers rock. You Win!</p>
+            </div>
+            
+            <div class="choices">
+                <div class="choice" id="rock">
+                    <img src="images/rock.png" alt="rock">
+                    <span class="icon">
+                        <i class="fa fa-home"></i>
+                    </span>
+                    
+                </div>
+                <div class="choice" id="paper">
+                    <img src="images/paper.png" alt="paper">
+                </div>
+                <div class="choice" id="scissors">
+                    <img src="images/scissors.png" alt="scissors">
+                </div>
+            </div>
+
+            <p class="action-message">Make Your Move</p>
+
+        </div>
+    </section>
+
     <script async type="text/javascript" src="js/game.js" async defer></script>
 </body>
 
