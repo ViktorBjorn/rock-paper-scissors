@@ -1,4 +1,4 @@
-const choiceStack = ['Paper', 'Rock', 'Scissors'];
+const choiceStack = ['paper', 'rock', 'scissors'];
 let computerScore = 0;
 let playerScore = 0;
 const userScore_p = document.getElementById("user-score");
@@ -6,8 +6,9 @@ const computerScore_p = document.getElementById("computer-score");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 
+/* Event Listeners */
 
 rock_div.addEventListener('click', function() {
     game("rock");
@@ -18,6 +19,8 @@ paper_div.addEventListener('click', function() {
 scissors_div.addEventListener('click', function() {
     game("scissors");
 });
+
+/* Generates computer's choice */
 
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3);
@@ -36,26 +39,29 @@ function lose() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == 'rock' && computerSelection == 'Scissors') {
+    if (playerSelection == undefined) {
+        result_p.innerHTML = `Ready to Play!`;
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         win();
-        result_div.innerHTML = `You Win! Rock beats Scissors`;
-    } else if (playerSelection == 'rock' && computerSelection == 'Paper') {
+        result_p.innerHTML = `You Win! Rock beats Scissors`;
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         lose();
-        result_div.innerHTML = `You Lose! Paper covers rock`;
-    } else if (playerSelection == 'paper' && computerSelection == 'Scissors') {
+        result_p.innerHTML = `You Lose! Paper covers rock`;
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         lose();
-        result_div.innerHTML = `You Lose! Scissors cut paper`; 
-    } else if (playerSelection == 'paper' && computerSelection == 'Rock') {
+        result_p.innerHTML = `You Lose! Scissors cut paper`; 
+    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         win();
-        result_div.innerHTML = `You Win! Paper covers rock`;
-    } else if (playerSelection == 'scissors' && computerSelection == "Rock") {
+        result_p.innerHTML = `You Win! Paper covers rock`;
+    } else if (playerSelection == 'scissors' && computerSelection == "rock") {
         lose();
-        result_div.innerHTML = `You Lose! Rocks beats Scissors`;
-    } else if (playerSelection == 'scissors' && computerSelection == 'Paper') {
+        result_p.innerHTML = `You Lose! Rocks beats Scissors`;
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         win();
-        result_div.innerHTML = `You Win! Scissors beat paper`;
+        result_p.innerHTML = `You Win! Scissors beat paper`;
+    } else  {
+        result_p.innerHTML = `That was a draw. Try Again!`;
     }
-    else result_div.innerHTML = `That was a draw. Try Again!`;
 }
 
 function game(playerSelection) {
