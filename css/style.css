@@ -1,0 +1,11 @@
+.scoreboard > .box:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.choices {
+    font-size: 5em;
+}
+
+div.choice > span:hover {
+    color: #f14668;
+}
